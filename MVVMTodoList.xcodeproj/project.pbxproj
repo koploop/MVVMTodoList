@@ -12,11 +12,11 @@
 		ACFAB8BD2088838E00437506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFAB8BC2088838E00437506 /* Assets.xcassets */; };
 		ACFAB8C02088838E00437506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFAB8BE2088838E00437506 /* LaunchScreen.storyboard */; };
 		ACFAB8C32088838E00437506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8C22088838E00437506 /* main.m */; };
-		ACFAB8D02088904F00437506 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8CF2088904F00437506 /* RootTableViewController.m */; };
 		ACFAB8E82088A45800437506 /* RootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8DF2088A45800437506 /* RootTableViewCell.m */; };
 		ACFAB8E92088A45800437506 /* CellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8E22088A45800437506 /* CellViewModel.m */; };
 		ACFAB8EA2088A45800437506 /* RootViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8E42088A45800437506 /* RootViewModel.m */; };
 		ACFAB8EB2088A45800437506 /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8E72088A45800437506 /* CellModel.m */; };
+		ACFAB8EE20898E6000437506 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8ED20898E6000437506 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,6 @@
 		ACFAB8BF2088838E00437506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACFAB8C12088838E00437506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACFAB8C22088838E00437506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ACFAB8CE2088904F00437506 /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
-		ACFAB8CF2088904F00437506 /* RootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
 		ACFAB8DE2088A45800437506 /* RootTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableViewCell.h; sourceTree = "<group>"; };
 		ACFAB8DF2088A45800437506 /* RootTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewCell.m; sourceTree = "<group>"; };
 		ACFAB8E12088A45800437506 /* CellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellViewModel.h; sourceTree = "<group>"; };
@@ -38,6 +36,8 @@
 		ACFAB8E42088A45800437506 /* RootViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewModel.m; sourceTree = "<group>"; };
 		ACFAB8E62088A45800437506 /* CellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
 		ACFAB8E72088A45800437506 /* CellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
+		ACFAB8EC20898E6000437506 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		ACFAB8ED20898E6000437506 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +72,8 @@
 			children = (
 				ACFAB8B32088838E00437506 /* AppDelegate.h */,
 				ACFAB8B42088838E00437506 /* AppDelegate.m */,
-				ACFAB8CE2088904F00437506 /* RootTableViewController.h */,
-				ACFAB8CF2088904F00437506 /* RootTableViewController.m */,
+				ACFAB8EC20898E6000437506 /* RootViewController.h */,
+				ACFAB8ED20898E6000437506 /* RootViewController.m */,
 				ACFAB8E52088A45800437506 /* Models */,
 				ACFAB8E02088A45800437506 /* ViewModels */,
 				ACFAB8DD2088A45800437506 /* Views */,
@@ -187,7 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACFAB8EA2088A45800437506 /* RootViewModel.m in Sources */,
-				ACFAB8D02088904F00437506 /* RootTableViewController.m in Sources */,
+				ACFAB8EE20898E6000437506 /* RootViewController.m in Sources */,
 				ACFAB8EB2088A45800437506 /* CellModel.m in Sources */,
 				ACFAB8E82088A45800437506 /* RootTableViewCell.m in Sources */,
 				ACFAB8C32088838E00437506 /* main.m in Sources */,
