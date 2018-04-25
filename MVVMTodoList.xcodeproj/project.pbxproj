@@ -17,9 +17,17 @@
 		ACFAB8EA2088A45800437506 /* RootViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8E42088A45800437506 /* RootViewModel.m */; };
 		ACFAB8EB2088A45800437506 /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8E72088A45800437506 /* CellModel.m */; };
 		ACFAB8EE20898E6000437506 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8ED20898E6000437506 /* RootViewController.m */; };
+		ACFAB8FA20901C7800437506 /* RootTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACFAB8F920901C7800437506 /* RootTableViewCell.xib */; };
+		ACFAB8FD2090500E00437506 /* DateOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB8FC2090500E00437506 /* DateOperator.m */; };
+		ACFAB9042090640C00437506 /* todos.json in Resources */ = {isa = PBXBuildFile; fileRef = ACFAB9032090640C00437506 /* todos.json */; };
+		ACFAB907209076C800437506 /* TodoListService.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFAB906209076C800437506 /* TodoListService.m */; };
+		E9F4CE40DF9573271148C80A /* libPods-MVVMTodoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61563589B87047E66616C04A /* libPods-MVVMTodoList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61563589B87047E66616C04A /* libPods-MVVMTodoList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMTodoList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		628439B5D4E177243E3B748A /* Pods-MVVMTodoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTodoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMTodoList/Pods-MVVMTodoList.debug.xcconfig"; sourceTree = "<group>"; };
+		7A8E9B72F0460DC3B2CD7D7F /* Pods-MVVMTodoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTodoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMTodoList/Pods-MVVMTodoList.release.xcconfig"; sourceTree = "<group>"; };
 		ACFAB8B02088838E00437506 /* MVVMTodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMTodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFAB8B32088838E00437506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACFAB8B42088838E00437506 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -38,6 +46,12 @@
 		ACFAB8E72088A45800437506 /* CellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
 		ACFAB8EC20898E6000437506 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		ACFAB8ED20898E6000437506 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		ACFAB8F920901C7800437506 /* RootTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootTableViewCell.xib; sourceTree = "<group>"; };
+		ACFAB8FB2090500E00437506 /* DateOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateOperator.h; sourceTree = "<group>"; };
+		ACFAB8FC2090500E00437506 /* DateOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateOperator.m; sourceTree = "<group>"; };
+		ACFAB9032090640C00437506 /* todos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = todos.json; sourceTree = "<group>"; };
+		ACFAB905209076C800437506 /* TodoListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoListService.h; sourceTree = "<group>"; };
+		ACFAB906209076C800437506 /* TodoListService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoListService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F4CE40DF9573271148C80A /* libPods-MVVMTodoList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A89F1B5D261DEFCE3DC4C49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				628439B5D4E177243E3B748A /* Pods-MVVMTodoList.debug.xcconfig */,
+				7A8E9B72F0460DC3B2CD7D7F /* Pods-MVVMTodoList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		42C5E7A121AA85D65E06EF30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61563589B87047E66616C04A /* libPods-MVVMTodoList.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACFAB8A72088838E00437506 = {
 			isa = PBXGroup;
 			children = (
 				ACFAB8B22088838E00437506 /* MVVMTodoList */,
 				ACFAB8B12088838E00437506 /* Products */,
+				2A89F1B5D261DEFCE3DC4C49 /* Pods */,
+				42C5E7A121AA85D65E06EF30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,10 +104,11 @@
 		ACFAB8B22088838E00437506 /* MVVMTodoList */ = {
 			isa = PBXGroup;
 			children = (
+				ACFAB9032090640C00437506 /* todos.json */,
 				ACFAB8B32088838E00437506 /* AppDelegate.h */,
 				ACFAB8B42088838E00437506 /* AppDelegate.m */,
-				ACFAB8EC20898E6000437506 /* RootViewController.h */,
-				ACFAB8ED20898E6000437506 /* RootViewController.m */,
+				ACFAB8FB2090500E00437506 /* DateOperator.h */,
+				ACFAB8FC2090500E00437506 /* DateOperator.m */,
 				ACFAB8E52088A45800437506 /* Models */,
 				ACFAB8E02088A45800437506 /* ViewModels */,
 				ACFAB8DD2088A45800437506 /* Views */,
@@ -89,8 +124,11 @@
 		ACFAB8DD2088A45800437506 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ACFAB8EC20898E6000437506 /* RootViewController.h */,
+				ACFAB8ED20898E6000437506 /* RootViewController.m */,
 				ACFAB8DE2088A45800437506 /* RootTableViewCell.h */,
 				ACFAB8DF2088A45800437506 /* RootTableViewCell.m */,
+				ACFAB8F920901C7800437506 /* RootTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +149,8 @@
 			children = (
 				ACFAB8E62088A45800437506 /* CellModel.h */,
 				ACFAB8E72088A45800437506 /* CellModel.m */,
+				ACFAB905209076C800437506 /* TodoListService.h */,
+				ACFAB906209076C800437506 /* TodoListService.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACFAB8C62088838E00437506 /* Build configuration list for PBXNativeTarget "MVVMTodoList" */;
 			buildPhases = (
+				07ECC32695D2225DF77FAD8F /* [CP] Check Pods Manifest.lock */,
 				ACFAB8AC2088838E00437506 /* Sources */,
 				ACFAB8AD2088838E00437506 /* Frameworks */,
 				ACFAB8AE2088838E00437506 /* Resources */,
+				17401F8B1F4180BEFADA38C0 /* [CP] Embed Pods Frameworks */,
+				43F10F818545F886A5B2CE4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,7 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFAB9042090640C00437506 /* todos.json in Resources */,
 				ACFAB8C02088838E00437506 /* LaunchScreen.storyboard in Resources */,
+				ACFAB8FA20901C7800437506 /* RootTableViewCell.xib in Resources */,
 				ACFAB8BD2088838E00437506 /* Assets.xcassets in Resources */,
 				ACFAB8BB2088838E00437506 /* Main.storyboard in Resources */,
 			);
@@ -181,14 +226,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07ECC32695D2225DF77FAD8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVMTodoList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17401F8B1F4180BEFADA38C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVVMTodoList/Pods-MVVMTodoList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43F10F818545F886A5B2CE4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MVVMTodoList/Pods-MVVMTodoList-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVVMTodoList/Pods-MVVMTodoList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACFAB8AC2088838E00437506 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACFAB907209076C800437506 /* TodoListService.m in Sources */,
 				ACFAB8EA2088A45800437506 /* RootViewModel.m in Sources */,
 				ACFAB8EE20898E6000437506 /* RootViewController.m in Sources */,
 				ACFAB8EB2088A45800437506 /* CellModel.m in Sources */,
+				ACFAB8FD2090500E00437506 /* DateOperator.m in Sources */,
 				ACFAB8E82088A45800437506 /* RootTableViewCell.m in Sources */,
 				ACFAB8C32088838E00437506 /* main.m in Sources */,
 				ACFAB8E92088A45800437506 /* CellViewModel.m in Sources */,
@@ -324,6 +425,7 @@
 		};
 		ACFAB8C72088838E00437506 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 628439B5D4E177243E3B748A /* Pods-MVVMTodoList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +440,7 @@
 		};
 		ACFAB8C82088838E00437506 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A8E9B72F0460DC3B2CD7D7F /* Pods-MVVMTodoList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

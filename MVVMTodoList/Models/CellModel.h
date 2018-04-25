@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYModel/YYModel.h>
 
 @interface CellModel : NSObject
 
 @property (nonatomic, copy) NSString *index;
-@property (nonatomic, strong) NSDate *startTime;
 
+@property (nonatomic, copy) NSString *todoString;
 
+@property (nonatomic, strong) NSDate *date;
+
+- (NSString *)formatterDateString;
+
++ (CellModel *)randomTodo;
 
 @end

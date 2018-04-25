@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CellModel.h"
 
 @interface CellViewModel : NSObject
+
+@property (nonatomic, copy, readonly) NSString *index;
+
+@property (nonatomic, copy, readonly) NSString *todoString;
+
+@property (nonatomic, copy, readonly) NSString *dateString;
+
++ (CellViewModel *)viewModelWithModel:(CellModel *)model;
+
+- (void)didTapTodo;
 
 @end

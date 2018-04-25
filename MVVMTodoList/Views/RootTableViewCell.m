@@ -12,13 +12,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+- (void)bindingCellWithViewModel:(CellViewModel *)viewModel {
+    self.indexLabel.text = viewModel.index;
+    self.contentLabel.text = viewModel.todoString;
+    self.dateLabel.text = viewModel.dateString;
 }
 
 @end

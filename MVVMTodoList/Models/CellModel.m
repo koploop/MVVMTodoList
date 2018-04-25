@@ -7,7 +7,50 @@
 //
 
 #import "CellModel.h"
+#import "DateOperator.h"
+
+@interface CellModel ()
+
+@property (nonatomic, strong, readwrite) NSArray *randomTodos;
+
+@end
+
 
 @implementation CellModel
+
+- (NSString *)formatterDateString {
+    NSDateFormatter *formatter = [[DateOperator sharedOperator] formatter];
+    return [formatter stringFromDate:self.date];
+}
+
++ (CellModel *)randomTodo {
+    return [[self alloc] initRandomTodo];
+}
+
+- (CellModel *)initRandomTodo {
+    self = [super init];
+    if (self) {
+        int number = arc4random() % 7 + 0;
+        self.index = [NSString stringWithFormat:@"%d", number];
+        self.todoString = self.randomTodos[number];
+        self.date = [NSDate dateWithTimeIntervalSinceNow:0];
+    }
+    return self;
+}
+
+
+#pragma mark -
+- (NSArray *)randomTodos {
+    if (!_randomTodos) {
+        _randomTodos = @[@"Go Study",
+                         @"Go Sleep",
+                         @"Make Lunch",
+                         @"Make Dinner",
+                         @"Watch Movie",
+                         @"Play Games",
+                         @"Do Works"];
+    }
+    return _randomTodos;
+}
 
 @end

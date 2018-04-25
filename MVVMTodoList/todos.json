@@ -1,0 +1,37 @@
+﻿[
+    {
+        "index": 1,
+        "todoString": "\"Do Homework\"",
+        "date": "\"1524640413\""
+    },
+    {
+        "index": 2,
+        "todoString": "\"Wash the clothes\"",
+        "date": "\"1524640413\""
+    },
+    {
+        "index": 3,
+        "todoString": "\"Sweep the floor\"",
+        "date": "\"1524640413\""
+    },
+    {
+        "index": 4,
+        "todoString": "\"Make dinner\"",
+        "date": "\"1524640413\""
+    },
+    {
+        "index": 5,
+        "todoString": "\"Feed Dogs\"",
+        "date": "\"1524640413\""
+    },
+    {
+        "index": 6,
+        "todoString": "\"Sleep\"",
+        "date": "\"1524640413\""
+    },
+    {
+        "index": 7,
+        "todoString": "\"Dream\"",
+        "date": "\"1524640413\""
+    }
+]

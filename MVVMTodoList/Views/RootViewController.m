@@ -10,10 +10,12 @@
 #import "RootViewModel.h"
 #import "RootTableViewCell.h"
 
+#import <IQKeyboardManager/IQKeyboardManager.h>
+
 
 static NSString *identifier = @"rootCell";
 
-@interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface RootViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
@@ -30,19 +32,48 @@ static NSString *identifier = @"rootCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.addButton;
-    self.viewModel = [RootViewModel new];
-    [self.tableView registerClass:[RootTableViewCell class] forCellReuseIdentifier:identifier];
+    [self viewModelCommandsHandler];
+    [self.tableView registerNib:[UINib nibWithNibName:@"RootTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.searchTextField.returnKeyType = UIReturnKeyGo;
+    self.searchTextField.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+//    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark -
-- (IBAction)addTodo:(UIBarButtonItem *)sender {
+- (void)viewModelCommandsHandler {
+    self.viewModel = [RootViewModel new];
+    [self.viewModel loadAllTodos:^(id colletion) {
+        [self.tableView reloadData];
+    }];
     
+    typeof(self)weakSelf = self;
+    self.viewModel.addTodoCommand = ^{
+        [weakSelf.tableView reloadData];
+    };
+    self.viewModel.searchTodoCommand = ^{
+        [weakSelf.tableView reloadData];
+    };
+}
+
+#pragma mark -
+// 增加一条todo
+- (IBAction)addTodo:(UIBarButtonItem *)sender {
+    [self.viewModel addTodoAction];
+}
+
+// 搜索todo index
+- (IBAction)goTodo:(UIButton *)sender {
+    [self.viewModel searchTodoAction];
 }
 
 #pragma mark -
@@ -59,6 +90,18 @@ static NSString *identifier = @"rootCell";
     [cell bindingCellWithViewModel:self.viewModel.todos[indexPath.row]];
     return cell;
 }
+
+#pragma mark -
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    self.viewModel.textFieldString = [textField.text stringByAppendingString:string];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self goTodo:nil];
+}
+
+
 
 
 /*

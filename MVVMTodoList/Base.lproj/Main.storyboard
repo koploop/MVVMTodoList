@@ -36,6 +36,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goTodo:" destination="8Nu-mP-lNl" eventType="touchUpInside" id="iX5-C6-Xwk"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-q5-EPP">
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
