@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "RootViewModel.h"
 #import "RootTableViewCell.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
@@ -32,18 +33,21 @@ static NSString *identifier = @"rootCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.addButton;
-    [self viewModelCommandsHandler];
-    [self.tableView registerNib:[UINib nibWithNibName:@"RootTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"RootTableViewCell" bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:identifier];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.rowHeight = 65;
     self.searchTextField.returnKeyType = UIReturnKeyGo;
     self.searchTextField.delegate = self;
+    
+    [self viewModelCommandsHandler];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-//    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,13 +56,17 @@ static NSString *identifier = @"rootCell";
 
 - (void)viewModelCommandsHandler {
     self.viewModel = [RootViewModel new];
+    [SVProgressHUD show];
     [self.viewModel loadAllTodos:^(id colletion) {
+        [SVProgressHUD dismiss];
         [self.tableView reloadData];
     }];
     
     typeof(self)weakSelf = self;
     self.viewModel.addTodoCommand = ^{
         [weakSelf.tableView reloadData];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:weakSelf.viewModel.todos.count - 1 inSection:0];
+        [weakSelf.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     };
     self.viewModel.searchTodoCommand = ^{
         [weakSelf.tableView reloadData];
@@ -73,7 +81,12 @@ static NSString *identifier = @"rootCell";
 
 // 搜索todo index
 - (IBAction)goTodo:(UIButton *)sender {
-    [self.viewModel searchTodoAction];
+    [self.searchTextField resignFirstResponder];
+    self.viewModel.textFieldString = self.searchTextField.text;
+    [SVProgressHUD show];
+    [self.viewModel searchTodoActionCompletion:^{
+        [SVProgressHUD dismiss];
+    }];
 }
 
 #pragma mark -
@@ -89,16 +102,6 @@ static NSString *identifier = @"rootCell";
     RootTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     [cell bindingCellWithViewModel:self.viewModel.todos[indexPath.row]];
     return cell;
-}
-
-#pragma mark -
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    self.viewModel.textFieldString = [textField.text stringByAppendingString:string];
-    return YES;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self goTodo:nil];
 }
 
 

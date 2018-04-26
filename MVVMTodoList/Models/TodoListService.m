@@ -41,8 +41,23 @@
     });
 }
 
-- (NSMutableArray<CellViewModel *> *)loadCachedTodos {
-    return self.cachedTodos;
+- (void)searchTodo:(NSString *)todoIndex completion:(void(^)(id collection))completion {
+    // 模拟耗时操作
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSMutableArray *results = [NSMutableArray array];
+        if (todoIndex && todoIndex.length > 0) {
+            for (CellViewModel *viewModel in self.cachedTodos) {
+                if ([viewModel.index containsString:todoIndex]) {
+                    [results addObject:viewModel];
+                }
+            }
+        }
+        else {
+            results = self.cachedTodos;
+        }
+        if (completion) {completion(results);}
+    });
 }
 
 #pragma mark -

@@ -11,8 +11,10 @@
 
 @interface TodoListService : NSObject
 
+@property (nonatomic, strong, readonly) NSMutableArray<CellViewModel *> *cachedTodos;
+
 - (void)requestTodosCompletion:(void(^)(id collection))completion;
 
-- (NSMutableArray<CellViewModel *> *)loadCachedTodos;
+- (void)searchTodo:(NSString *)todoIndex completion:(void(^)(id collection))completion;
 
 @end

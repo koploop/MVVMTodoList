@@ -34,7 +34,7 @@ static DateOperator *_operator;
     if (!_formatter) {
         _formatter = [[NSDateFormatter alloc] init];
         _formatter.timeZone = [NSTimeZone systemTimeZone];
-        _formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        _formatter.dateFormat = @"yyyy-MM-dd";
     }
     return _formatter;
 }

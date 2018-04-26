@@ -10,6 +10,7 @@ target "MVVMTodoList" do
 
     pod 'YYModel'
     pod 'IQKeyboardManager'
+    pod 'SVProgressHUD'
 
 end
 

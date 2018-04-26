@@ -53,6 +53,6 @@ typedef void(^SearchTodoCommand)(void);
  * 点击Go,搜索指定index的todo
  * 这里方法中可以附带搜索的参数,也可以不带,使用上面定义的textFieldString
  */
-- (void)searchTodoAction;
+- (void)searchTodoActionCompletion:(void(^)(void))completion;
 
 @end

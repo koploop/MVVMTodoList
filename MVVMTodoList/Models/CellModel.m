@@ -20,7 +20,8 @@
 
 - (NSString *)formatterDateString {
     NSDateFormatter *formatter = [[DateOperator sharedOperator] formatter];
-    return [formatter stringFromDate:self.date];
+    NSString *dateString = [formatter stringFromDate:self.date];
+    return dateString;
 }
 
 + (CellModel *)randomTodo {
@@ -38,6 +39,13 @@
     return self;
 }
 
+#pragma mark - YYModel
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    NSNumber *timestamp = dic[@"date"];
+    if (![timestamp isKindOfClass:[NSNumber class]]) return NO;
+    _date = [NSDate dateWithTimeIntervalSince1970:timestamp.floatValue];
+    return YES;
+}
 
 #pragma mark -
 - (NSArray *)randomTodos {

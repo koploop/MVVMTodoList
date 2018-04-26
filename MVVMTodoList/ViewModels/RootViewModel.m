@@ -23,6 +23,7 @@
 - (void)loadAllTodos:(void(^)(id colletion))completion {
     [self.service requestTodosCompletion:^(id collection) {
         self.todos = collection;
+        if (completion) { completion(collection); };
     }];
 }
 
@@ -36,22 +37,13 @@
     }
 }
 
-- (void)searchTodoAction {
-    if (self.textFieldString) {
-        NSMutableArray *results = [NSMutableArray array];
-        for (CellViewModel *viewModel in self.todos) {
-            if ([viewModel.todoString containsString:self.textFieldString]) {
-                [results addObject:viewModel];
-            }
-        }
-        self.todos = results;
-    } else {
-        self.todos = [self.service loadCachedTodos];
-    }
+- (void)searchTodoActionCompletion:(void (^)(void))completion {
     
-    if (self.searchTodoCommand) {
-        self.searchTodoCommand();
-    }
+    [self.service searchTodo:self.textFieldString completion:^(id collection) {
+        self.todos = collection;
+        if (completion) {completion();}
+        if (self.searchTodoCommand) {self.searchTodoCommand();}
+    }];
 }
 
 #pragma mark -
